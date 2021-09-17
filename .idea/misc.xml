@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/JetpackLibraries/NotesApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/JetpackLibraries/NotesApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.2212962962962963" />
+        <entry key="..\:/JetpackLibraries/NotesApp/app/src/main/res/layout/fragment_edit_notes.xml" value="0.259375" />
+        <entry key="..\:/JetpackLibraries/NotesApp/app/src/main/res/layout/fragment_home.xml" value="0.259375" />
       </map>
     </option>
   </component>
