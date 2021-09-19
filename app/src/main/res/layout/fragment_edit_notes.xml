@@ -50,21 +50,21 @@
                 android:id="@+id/priority_red"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:src="@drawable/red"
+                android:background="@drawable/red"
                 android:layout_marginStart="5dp"/>
 
             <ImageView
                 android:id="@+id/priority_yellow"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:src="@drawable/yellow"
+                android:background="@drawable/yellow"
                 android:layout_marginStart="20dp"/>
 
             <ImageView
                 android:id="@+id/priority_green"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:src="@drawable/green"
+                android:background="@drawable/green"
                 android:layout_marginStart="20dp"/>
 
         </LinearLayout>
