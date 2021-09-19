@@ -2,10 +2,9 @@ package com.example.notesapp.ui.fragments
 
 import android.os.Bundle
 import android.text.format.DateFormat
+import android.view.*
+import android.widget.TextView
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
@@ -14,6 +13,7 @@ import com.example.notesapp.R
 import com.example.notesapp.databinding.FragmentEditNotesBinding
 import com.example.notesapp.model.Notes
 import com.example.notesapp.viewModel.NotesViewModel
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -31,6 +31,7 @@ class EditNotesFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentEditNotesBinding.inflate(layoutInflater, container, false)
+        setHasOptionsMenu(true)
 
         binding.editTitle.setText(notes.data.title)
         binding.editSubtitle.setText(notes.data.subTitle)
@@ -88,5 +89,30 @@ class EditNotesFragment : Fragment() {
         }
 
         Navigation.findNavController(it!!).navigate(R.id.action_editNotesFragment_to_homeFragment)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.delete_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_delete) {
+            val bottomSheet = BottomSheetDialog(requireContext())
+            bottomSheet.setContentView(R.layout.dialog_delete)
+            bottomSheet.show()
+
+            val yes = bottomSheet.findViewById<TextView>(R.id.dialog_yes)
+            val no = bottomSheet.findViewById<TextView>(R.id.dialog_no)
+
+            yes?.setOnClickListener {
+                viewModel.deleteNotes(notes.data.id!!)
+                bottomSheet.dismiss()
+            }
+            no?.setOnClickListener {
+                bottomSheet.dismiss()
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
