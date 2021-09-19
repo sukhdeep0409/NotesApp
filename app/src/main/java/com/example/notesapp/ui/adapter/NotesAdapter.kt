@@ -11,7 +11,7 @@ import com.example.notesapp.model.Notes
 import com.example.notesapp.ui.fragments.HomeFragmentDirections
 
 class NotesAdapter
-constructor(val requireContext: Context, private val notesList: List<Notes>):
+constructor(val requireContext: Context, private var notesList: List<Notes>):
 RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotesViewHolder {
         return NotesViewHolder(
@@ -53,6 +53,11 @@ RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
     }
 
     override fun getItemCount() = notesList.size
+
+    fun filtering(newFilteredList: ArrayList<Notes>) {
+        notesList = newFilteredList
+        notifyDataSetChanged()
+    }
 
     class NotesViewHolder(val binding: ItemNotesBinding): RecyclerView.ViewHolder(binding.root)
 }
