@@ -15,7 +15,7 @@ import com.example.notesapp.viewModel.NotesViewModel
 
 class HomeFragment : Fragment() {
 
-    lateinit var binding: FragmentHomeBinding
+    private lateinit var binding: FragmentHomeBinding
     private val viewModel: NotesViewModel by viewModels()
 
     override fun onCreateView(
@@ -32,12 +32,47 @@ class HomeFragment : Fragment() {
             }
         })
 
+        binding.filterHigh.setOnClickListener {
+            viewModel.getHighNotes().observe(viewLifecycleOwner, { notesList ->
+                binding.recyclerViewAllNotes.apply {
+                    layoutManager = GridLayoutManager(requireContext(), 2)
+                    adapter = NotesAdapter(requireContext(), notesList)
+                }
+            })
+        }
+
+        binding.filterMedium.setOnClickListener {
+            viewModel.getMediumNotes().observe(viewLifecycleOwner, { notesList ->
+                binding.recyclerViewAllNotes.apply {
+                    layoutManager = GridLayoutManager(requireContext(), 2)
+                    adapter = NotesAdapter(requireContext(), notesList)
+                }
+            })
+
+        }
+
+        binding.filterLow.setOnClickListener {
+            viewModel.getLowNotes().observe(viewLifecycleOwner, { notesList ->
+                binding.recyclerViewAllNotes.apply {
+                    layoutManager = GridLayoutManager(requireContext(), 2)
+                    adapter = NotesAdapter(requireContext(), notesList)
+                }
+            })
+        }
+
+        binding.allNotes.setOnClickListener {
+            viewModel.getNotes().observe(viewLifecycleOwner, { notesList ->
+                binding.recyclerViewAllNotes.apply {
+                    layoutManager = GridLayoutManager(requireContext(), 2)
+                    adapter = NotesAdapter(requireContext(), notesList)
+                }
+            })
+        }
+
         binding.btnAddNotes.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_homeFragment_to_createNotesFragment)
         }
 
         return binding.root
     }
-
-
 }

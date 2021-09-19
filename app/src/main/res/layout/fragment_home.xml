@@ -11,10 +11,80 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <LinearLayout
+            android:id="@+id/linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/all_notes"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:gravity="center"
+                android:text="All"
+                android:textSize="13sp"
+                android:textColor="#D1D1D1"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/btn_filter_shape"
+                android:src="@drawable/all"/>
+
+            <TextView
+                android:id="@+id/filter_high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="High"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:paddingTop="10dp"
+                android:layout_marginStart="10dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/red_color"
+                android:fontFamily="@font/regular"
+                android:background="@drawable/btn_filter_shape"
+                android:textSize="13sp"/>
+
+            <TextView
+                android:id="@+id/filter_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medium"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:paddingTop="10dp"
+                android:layout_marginStart="10dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/yellow_color"
+                android:fontFamily="@font/regular"
+                android:background="@drawable/btn_filter_shape"
+                android:textSize="13sp"/>
+
+            <TextView
+                android:id="@+id/filter_low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Low"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:paddingTop="10dp"
+                android:layout_marginStart="10dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/green_color"
+                android:fontFamily="@font/regular"
+                android:background="@drawable/btn_filter_shape"
+                android:textSize="13sp"/>
+
+        </LinearLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_all_notes"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_below="@+id/linear_layout"
+            android:layout_marginTop="5dp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_add_notes"
