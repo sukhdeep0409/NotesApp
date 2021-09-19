@@ -3,12 +3,98 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.CreateNotesFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/save_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title ..."
+            android:background="@drawable/edit_text_shape"
+            android:padding="20dp"
+            android:maxLines="1"
+            android:textColor="#D1D1D1"
+            android:fontFamily="@font/regular"
+            android:layout_marginTop="10dp"
+            android:textColorHint="#D1D1D1"/>
+
+        <EditText
+            android:id="@+id/save_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Subtitle ... "
+            android:background="@drawable/edit_text_shape"
+            android:padding="20dp"
+            android:textColor="#D1D1D1"
+            android:fontFamily="@font/regular"
+            android:layout_marginTop="10dp"
+            android:textColorHint="#D1D1D1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+
+            <ImageView
+                android:id="@+id/priority_red"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/red"
+                android:layout_marginStart="5dp"/>
+
+            <ImageView
+                android:id="@+id/priority_yellow"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/yellow"
+                android:layout_marginStart="20dp"/>
+
+            <ImageView
+                android:id="@+id/priority_green"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/green"
+                android:layout_marginStart="20dp"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/save_text_notes"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:hint="Notes ... "
+            android:gravity="start"
+            android:background="@drawable/edit_text_shape"
+            android:padding="15dp"
+            android:textColor="#D1D1D1"
+            android:maxLines="1"
+            android:fontFamily="@font/regular"
+            android:layout_marginTop="10dp"
+            android:textColorHint="#D1D1D1"/>
+
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_save_notes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="22dp"
+        android:backgroundTint="@color/red_color"
+        android:src="@drawable/ic_done"
+        app:tint="@color/white"/>
 
 </FrameLayout>

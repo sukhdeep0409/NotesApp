@@ -3,10 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/JetpackLibraries/NotesApp/app/src/main/res/drawable/edit_text_shape.xml" value="0.25925925925925924" />
+        <entry key="..\:/JetpackLibraries/NotesApp/app/src/main/res/drawable/green.xml" value="0.23055555555555557" />
+        <entry key="..\:/JetpackLibraries/NotesApp/app/src/main/res/drawable/no_btn.xml" value="0.22685185185185186" />
+        <entry key="..\:/JetpackLibraries/NotesApp/app/src/main/res/drawable/red.xml" value="0.23055555555555557" />
+        <entry key="..\:/JetpackLibraries/NotesApp/app/src/main/res/drawable/yellow.xml" value="0.23055555555555557" />
+        <entry key="..\:/JetpackLibraries/NotesApp/app/src/main/res/drawable/yes_btn.xml" value="0.23055555555555557" />
         <entry key="..\:/JetpackLibraries/NotesApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/JetpackLibraries/NotesApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.2212962962962963" />
-        <entry key="..\:/JetpackLibraries/NotesApp/app/src/main/res/layout/fragment_edit_notes.xml" value="0.259375" />
-        <entry key="..\:/JetpackLibraries/NotesApp/app/src/main/res/layout/fragment_home.xml" value="0.259375" />
+        <entry key="..\:/JetpackLibraries/NotesApp/app/src/main/res/layout/dialog_delete.xml" value="0.2" />
+        <entry key="..\:/JetpackLibraries/NotesApp/app/src/main/res/layout/fragment_create_notes.xml" value="0.2" />
+        <entry key="..\:/JetpackLibraries/NotesApp/app/src/main/res/layout/fragment_edit_notes.xml" value="0.2" />
+        <entry key="..\:/JetpackLibraries/NotesApp/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/JetpackLibraries/NotesApp/app/src/main/res/layout/item_notes.xml" value="0.2" />
+        <entry key="..\:/JetpackLibraries/NotesApp/app/src/main/res/layout/m_notes.xml" value="0.259375" />
       </map>
     </option>
   </component>
