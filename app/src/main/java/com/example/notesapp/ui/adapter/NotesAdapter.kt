@@ -11,12 +11,12 @@ import com.example.notesapp.model.Notes
 import com.example.notesapp.ui.fragments.HomeFragmentDirections
 
 class NotesAdapter
-constructor(val requireContext: Context, private var notesList: List<Notes>):
+constructor(private val requireContext: Context, private var notesList: List<Notes>):
 RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotesViewHolder {
         return NotesViewHolder(
             ItemNotesBinding.inflate(
-                LayoutInflater.from(parent.context),
+                LayoutInflater.from(requireContext),
                 parent,
                 false
             )

@@ -58,6 +58,25 @@ class EditNotesFragment : Fragment() {
             }
         }
 
+        binding.priorityGreen.setOnClickListener {
+            priority = "1"
+            binding.priorityGreen.setImageResource(R.drawable.ic_tick)
+            binding.priorityRed.setImageResource(0)
+            binding.priorityYellow.setImageResource(0)
+        }
+        binding.priorityYellow.setOnClickListener {
+            priority = "2"
+            binding.priorityYellow.setImageResource(R.drawable.ic_tick)
+            binding.priorityRed.setImageResource(0)
+            binding.priorityGreen.setImageResource(0)
+        }
+        binding.priorityRed.setOnClickListener {
+            priority = "3"
+            binding.priorityRed.setImageResource(R.drawable.ic_tick)
+            binding.priorityGreen.setImageResource(0)
+            binding.priorityYellow.setImageResource(0)
+        }
+
         binding.btnEditNotes.setOnClickListener {
             updateNotes(it)
         }
@@ -108,6 +127,7 @@ class EditNotesFragment : Fragment() {
             yes?.setOnClickListener {
                 viewModel.deleteNotes(notes.data.id!!)
                 bottomSheet.dismiss()
+                activity?.supportFragmentManager?.popBackStack()
             }
             no?.setOnClickListener {
                 bottomSheet.dismiss()
